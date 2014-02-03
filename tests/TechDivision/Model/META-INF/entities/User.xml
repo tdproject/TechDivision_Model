@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://pear.struts4php.org/schema/entity-1.0.2.xsd"
+	name="User" type="entity">
+    <description>This class represents an object oriented way to manipulate data in the database.</description>
+    <members>
+        <member name="userId" sqlname="user_id" type="Integer" initial="null"/>
+    	<member name="firstname" sqlname="firstname" type="String" initial="null"/>
+    	<member name="lastname" sqlname="lastname" type="String" initial="null"/>
+    	<member name="email" sqlname="email" type="String" initial="null"/>
+    	<member name="username" sqlname="username" type="String" initial="null"/>
+    	<member name="password" sqlname="password" type="String" initial="null"/>
+	</members>
+	<querys>
+		<query>
+			<description><![CDATA[Returns all users.]]></description>
+			<method name="findAll">
+				<params/>
+			</method>
+			<result-type>ArrayList</result-type>
+			<sql><![CDATA[SELECT * FROM user]]></sql>
+		</query>
+		<query>
+			<description><![CDATA[Returns the user with the passed username.]]></description>
+			<method name="findByUsername">
+				<params>
+					<param name="username" type="String"/>
+				</params>
+			</method>
+			<result-type>Storable</result-type>
+			<sql><![CDATA[SELECT * FROM user WHERE username = ?]]></sql>
+		</query>
+	</querys>
+	<references>
+		<reference name="user-has-projects">
+			<method-name>Project</method-name>
+			<multiplicity>many</multiplicity>
+			<source>
+				<entity-name>Project</entity-name>
+			</source>
+			<target>
+				<member-name>userId</member-name>
+			</target>
+		</reference>
+	</references>
+	<tables>
+		<table type="InnoDB" default-charset="utf8" collate="utf8_unicode_ci" auto-increment="1" name="user">
+			<keys>
+				<pk name="user_pk" field="user_id"/>
+			</keys>	
+			<fields>
+				<field name="user_id" type="int" length="10" nullable="false" autoincrement="true"/>
+				<field name="firstname" type="varchar" length="255" nullable="false"/>
+				<field name="lastname" type="varchar" length="255" nullable="false"/>
+				<field name="email" type="varchar" length="255" nullable="false" default="1"/>
+				<field name="username" type="varchar" length="50" nullable="false"/>
+				<field name="password" type="varchar" length="32" nullable="false"/>
+			</fields>
+			<initial-data>
+				<rows>
+					<row>
+						<col name="user_id">1</col>
+						<col name="firstname">Tim</col>
+						<col name="lastname">Wagner</col>
+						<col name="email">tw@struts4php.org</col>
+						<col name="username">wagnert</col>
+						<col name="password">7586dca21d86c901a710a9cd92910756</col>
+					</row>
+				</rows>
+			</initial-data>
+		</table>
+	</tables>
+</entity>

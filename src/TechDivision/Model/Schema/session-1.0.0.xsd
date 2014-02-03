@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+  <xs:element name="params">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="param"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="return">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element ref="description"/>
+      </xs:choice>      
+      <xs:attributeGroup ref="attlist.return"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="workflow">  
+    <xs:complexType mixed="true">
+      <xs:attributeGroup ref="attlist.workflow"/>
+    </xs:complexType>
+  </xs:element>  
+  <xs:element name="description" type="xs:string"/>
+  <xs:element name="param">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="1" maxOccurs="1">
+        <xs:element ref="description"/>
+      </xs:choice>       
+      <xs:attributeGroup ref="attlist.param"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.param">
+    <xs:attribute name="name"/>
+    <xs:attribute name="type"/>
+    <xs:attribute name="default"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="attlist.return">
+    <xs:attribute name="type" type="datatype"/>
+  </xs:attributeGroup>  
+  <xs:element name="methods">
+    <xs:complexType mixed="true">
+      <xs:sequence>
+        <xs:element minOccurs="0" maxOccurs="unbounded" ref="method"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="processor">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="description"/>
+        <xs:element ref="methods"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.processor"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.processor">
+    <xs:attribute name="name" type="xs:string"/>
+    <xs:attribute name="type" type="xs:string"/>
+    <xs:attribute name="default-application" type="xs:string"/>
+    <xs:attribute name="deployment-descriptor" type="xs:string"/>
+    <xs:attribute name="use-master-only" type="xs:boolean"/>
+  </xs:attributeGroup>
+  <xs:element name="method">
+    <xs:complexType mixed="true">
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="description"/>
+        <xs:element ref="params"/>
+        <xs:element ref="workflow"/>
+        <xs:element ref="return"/>
+      </xs:choice>
+      <xs:attributeGroup ref="attlist.method"/>
+    </xs:complexType>
+  </xs:element>
+  <xs:attributeGroup name="attlist.method">
+    <xs:attribute name="name"/>
+    <xs:attribute name="type" type="methodtype"/>
+  </xs:attributeGroup>
+  <xs:attributeGroup name="attlist.workflow">
+    <xs:attribute name="name"/>
+  </xs:attributeGroup>
+  <xs:simpleType name="methodtype">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="abstract"/>
+      <xs:enumeration value="final"/>
+      <xs:enumeration value="inherited"/>
+    </xs:restriction>
+  </xs:simpleType> 
+  <xs:simpleType name="datatype">
+    <xs:restriction base="xs:NMTOKEN">
+      <xs:enumeration value="void"/>
+      <xs:enumeration value="object"/>
+      <xs:enumeration value="array"/>
+      <xs:enumeration value="string"/>
+      <xs:enumeration value="String"/>
+      <xs:enumeration value="integer"/>
+      <xs:enumeration value="Integer"/>
+      <xs:enumeration value="float"/>
+      <xs:enumeration value="Float"/>
+      <xs:enumeration value="boolean"/>
+      <xs:enumeration value="Collection"/>
+      <xs:enumeration value="EPBValue"/>
+      <xs:enumeration value="EPBLightValue"/>
+      <xs:enumeration value="ArrayList"/>
+      <xs:enumeration value="HashMap"/>
+      <xs:enumeration value="TreeMap"/>
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

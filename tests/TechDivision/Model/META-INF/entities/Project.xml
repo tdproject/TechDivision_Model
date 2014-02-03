@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<entity xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:noNamespaceSchemaLocation="http://pear.struts4php.org/schema/entity-1.0.2.xsd"
+	name="Project" type="entity">
+    <description>This class represents an object oriented way to manipulate data in the database.</description>
+    <members>
+    	<member name="projectId" sqlname="project_id" type="Integer" initial="null"/>
+    	<member name="userIdFk" sqlname="user_id_fk" type="Integer" initial="null"/>
+		<member name="name" sqlname="name" type="String" initial="null"/>
+		<member name="description" sqlname="description" type="String" initial="null"/>
+		<member name="generatedBuildfile" sqlname="generated_buildfile" type="String" initial="null"/>
+		<member name="generationDate" sqlname="generation_date" type="Integer" initial="0"/>
+		<member name="modTime" sqlname="mod_time" type="Integer" initial="0"/>
+	</members>
+	<querys>
+		<query>
+			<description><![CDATA[Returns all projects.]]></description>
+			<method name="findAll">
+				<params/>
+			</method>
+			<result-type>ArrayList</result-type>
+			<sql><![CDATA[SELECT * FROM project]]></sql>
+		</query>
+		<query>
+			<description><![CDATA[Returns all projects for the passed user id.]]></description>
+			<method name="findAllByUserIdFk">
+				<params>
+					<param name="userIdFk" type="integer"/>
+				</params>
+			</method>
+			<result-type>ArrayList</result-type>
+			<sql><![CDATA[SELECT * FROM project WHERE user_id_fk = ?]]></sql>
+		</query>
+	</querys>
+	<references>
+		<reference name="project-has-user">
+			<method-name>User</method-name>
+			<multiplicity>one</multiplicity>
+			<source>
+				<entity-name>User</entity-name>
+			</source>
+			<target>
+				<member-name>userIdFk</member-name>
+			</target>
+		</reference>
+	</references>
+	<tables>
+		<table type="InnoDB" default-charset="utf8" collate="utf8_unicode_ci" auto-increment="1" name="project">
+			<keys>
+				<pk name="project_pk" field="project_id"/>
+				<index name="project_idx_01" field="user_id_fk"/>
+				<fk name="project_fk_01" field="user_id_fk" target-table="user" target-field="user_id" on-delete="cascade"/>
+			</keys>	
+			<fields>
+				<field name="project_id" type="int" length="10" nullable="false" autoincrement="true"/>
+				<field name="user_id_fk" type="int" length="10" nullable="false"/>
+				<field name="name" type="varchar" length="50" nullable="false"/>
+				<field name="description" type="text" nullable="false"/>
+				<field name="generated_buildfile" type="text" nullable="false"/>
+				<field name="generation_date" type="int" length="10" nullable="false"/>
+				<field name="mod_time" type="int" length="10" nullable="false"/>
+			</fields>
+		</table>
+	</tables>
+</entity>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datasources xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://pear.struts4php.org/schema/datasource-1.0.0.xsd">
+    <datasource>
+        <type>master</type>
+        <name>test</name>
+        <driver>mysqli</driver>
+        <host>localhost</host>
+        <port>3306</port>
+        <database>test_model</database>
+        <user>testUser</user>
+        <password>testPass</password>
+        <encoding>utf8</encoding>
+        <autocommit>true</autocommit>
+    </datasource>
+</datasources>

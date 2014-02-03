@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?><package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.7.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0     http://pear.php.net/dtd/tasks-1.0.xsd     http://pear.php.net/dtd/package-2.0     http://pear.php.net/dtd/package-2.0.xsd">
+	<name>${ant.project.name}</name>
+	<channel>${pear.channel}</channel>
+	<summary>Basic data types for PHP 5.1 or later</summary>
+	<description>
+		This package provides some basic data types.
+	</description>
+	<lead>
+		<name>Tim Wagner</name>
+		<user>wagnert</user>
+		<email>tw@techdivision.com</email>
+		<active>yes</active>
+	</lead>
+	<date>${actual.date}</date>
+	<time>${actual.time}</time>
+	<version>
+		<release>${release.version}</release>
+		<api>${api.version}</api>
+	</version>
+	<stability>
+		<release>${release.stability}</release>
+		<api>${api.stability}</api>
+	</stability>
+	<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+	<notes>- Refactore container initialization
+</notes>
+	<contents>
+		<dir name="/"/>
+	</contents>
+	<dependencies>
+		<required>
+			<php>
+				<min>5.2.0</min>
+				<max>6.0</max>
+			</php>
+			<pearinstaller>
+				<min>1.6.2</min>
+			</pearinstaller>
+			<package>
+				<name>TechDivision_Util</name>
+				<channel>pear.appserver.io/library</channel>
+				<min>0.1.0</min>
+			</package>
+			<package>
+				<name>TechDivision_Logger</name>
+				<channel>pear.appserver.io/library</channel>
+				<min>0.1.0</min>
+			</package>
+		</required>
+	</dependencies>
+	<phprelease/>
+	<changelog>
+		<release>
+                    <version>
+                        <release>0.2.11</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-09</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Refactore container initialization
+
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.10</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-08</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Refactor container session + entity cache handling
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.9</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-06</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Implement wrapper for Zend_Cache_Core to improve AOP performance
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.8</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Reduce searching folders for pointcut.xml to META-INF directories
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.7</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix for invalid key handling in entity container lookup method
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.6</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Add remove() method to remove deleted beans from container
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.5</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Add bugfix for handling primary keys with type int instead of Integer
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.4</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-10-03</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix for invalid getContainer() singleton resulting in missing transaction commit
+                    </notes>
+                </release>
+<release>
+                    <version>
+                        <release>0.2.3</release>
+                        <api>0.2.1</api>
+                    </version>
+                    <stability>
+                        <release>beta</release>
+                        <api>beta</api>
+                    </stability>
+                    <date>2011-09-27</date>
+                    <license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+                    <notes>
+                        - Bugfix for invalid multi application container initialization
+                    </notes>
+                </release>
+<release>
+			<version>
+				<release>0.2.2</release>
+				<api>0.2.1</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2011-01-11</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Refactoring transaction counter in TechDivision_Model_Manager_Transaction
+				- Refactoring TechDivision_Model_Manager_MySQLi::execute() method to avoid notice when running an update statement
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.1</release>
+				<api>0.2.1</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2011-01-08</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid counter for unlinked session files
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.2.0</release>
+				<api>0.2.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-16</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid session folder initialization in garbage collector
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.3</release>
+				<api>0.1.1</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-07-05</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid Boolean/boolean handling in _escape() method
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.2</release>
+				<api>0.1.1</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-06-11</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid session handling
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.1</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-04-06</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Bugfixing invalid name in interface TechDivision_Model_Interfaces_Session
+				- Bugfixing invalid session initialization in TechDivision_Model_Container_Implementation
+				- Refactoring logger initialization in TechDivision_Model_Container_Implementation
+			</notes>
+		</release>
+		<release>
+			<version>
+				<release>0.1.0</release>
+				<api>0.1.0</api>
+			</version>
+			<stability>
+				<release>beta</release>
+				<api>beta</api>
+			</stability>
+			<date>2010-05-25</date>
+			<license uri="http://www.gnu.org/licenses/gpl-2.0.html">GPL, version 2.0</license>
+			<notes>
+				- Initial release
+			</notes>
+		</release>
+	</changelog>
+</package>

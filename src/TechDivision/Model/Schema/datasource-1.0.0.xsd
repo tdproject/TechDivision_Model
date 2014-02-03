@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="datasources">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="datasource" maxOccurs="unbounded"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:element name="datasource">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="type" type="type.datasource"/>
+                <xs:element name="name" type="xs:string"/>
+                <xs:element name="driver" type="type.driver"/>
+                <xs:element name="host" type="xs:string"/>
+                <xs:element name="port" type="xs:int"/>
+                <xs:element name="database" type="xs:string"/>
+                <xs:element name="user" type="xs:string"/>
+                <xs:element name="password" type="xs:string"/>
+                <xs:element name="encoding" type="type.encoding"/>
+                <xs:element name="autocommit" type="xs:boolean"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    <xs:simpleType name="type.datasource">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="session" />
+            <xs:enumeration value="master" />
+            <xs:enumeration value="slave" />
+            <xs:enumeration value="dedicated" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="type.driver">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="mysqli" />
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="type.encoding">
+        <xs:restriction base="xs:NMTOKEN">
+            <xs:enumeration value="utf8" />
+            <xs:enumeration value="latin1" />
+        </xs:restriction>
+    </xs:simpleType>
+</xs:schema>

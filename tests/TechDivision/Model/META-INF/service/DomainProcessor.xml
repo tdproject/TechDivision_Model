@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<processor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:noNamespaceSchemaLocation="http://pear.struts4php.org/schema/session-1.0.1.xsd" 
+	name="DomainProcessor" type="session" default-application="www" deployment-descriptor="model/META-INF/deployment-descriptor.xml">
+    <description>This class represents an object oriented way to manipulate data in the database.</description>
+	<methods>
+		<method name="getProjectViewData" type="abstract">
+			<description><![CDATA[This method returns all data of the project with the id passed as parameter.]]></description>
+			<params>
+				<param name="projectId" type="integer" default="null" >
+					<description><![CDATA[Holds the id of the project to load the data for]]></description>
+				</param>
+			</params>
+			<return type="Value">
+				<description><![CDATA[Returns a DTO initialized with the data of the requested project.]]></description>
+			</return>
+		</method>
+	</methods>
+</processor>
